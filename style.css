@@ -1,3 +1,44 @@
+/* animation */
+@keyframes 머리왼쪽 {
+    from {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(10deg) translateX(10px);
+    }
+}
+
+@keyframes 머리오른쪽 {
+    from {
+        transform: rotate(70deg);
+    }
+
+    to {
+        transform: rotate(80deg) translateX(10px);
+    }
+}
+
+@keyframes 뱅 {
+    from {
+        transform: rotate(5deg);
+    }
+
+    to {
+        transform: rotate(3deg) translateX(10px);
+    }
+}
+
+@keyframes 스푼 {
+    from {
+        transform: rotate(5deg);
+    }
+
+    to {
+        transform: rotate(3deg) translateX(2px);
+    }
+}
+
 /* reset */
 body {
     margin: 0;
@@ -12,7 +53,7 @@ body {
 }
 
 body {
-    background-color: #92EB95;
+    background-color: #E8C6FC;
 }
 
 .girl {
@@ -21,121 +62,85 @@ body {
     margin: 50px auto;
     width: 400px;
     height: 380px;
-    
 }
 
-/* .point {
+.spoon * {
     position: absolute;
-    top: -60px;
-    right: 140px;
-    width: 40px;
-    height: 60px;
-    background-color: green;
-    border: 10px solid black;
-    z-index: 100;
-    transform: rotate(10deg);
-} */
+    border: 10px solid silver;
+}
 
 .shadow {
-    position: absolute;
     top: -60px;
     left: -20px;
     width: 180px;
     height: 80px;
     border-radius: 50%;
     border: 7px solid gray;
-    z-index: 10;
+    z-index: 30;
 }
 
 .shadow-cover {
-    position: absolute;
     top: -60px;
     left: -20px;
     width: 160px;
     height: 50px;
     background-color: silver;
-    border: 10px solid silver;
-    z-index: 11;
+    z-index: 40;
 }
 
 .circle {
-    position: absolute;
     top: -80px;
     left: -50px;
     width: 230px;
     height: 120px;
-    border-radius: 50%;
-    border: 10px solid silver;
-    
     background-color: silver;
-    z-index: 9;
+    border-radius: 50%;
+    z-index: 20;
     transform: rotate(5deg);
+    animation: 스푼 0.8s infinite alternate;
 }
 
 .rect {
-    position: absolute;
     top: -30px;
     left: 30px;
     width: 450px;
     height: 40px;
-    border: 10px solid silver;
-    border-radius: 0 25% 25% 0;
     background-color: silver;
-    z-index: 8;
+    border-radius: 0 25% 25% 0;
+    z-index: 10; 
 }
-
-
-
-
-
 
 .bang {
     position: absolute;
+    top: 5px;
     width: 100px;
     height: 100px;
-    border: 10px solid black;
     background-color: black;
-    
-    
+    border: 10px solid black;
+    animation: 뱅 0.8s infinite alternate;
 }
 
-/* .bang.top {
-    top: -50px;
-    left: 30px;
-    width: 400px;
-    height: 140px;
-    border-radius: 50%;
-    transform: rotate(10deg);
-    background-color: orangered;
-    z-index: 10;
-} */
-
 .bang.first {
-    top: 5px;
     border-radius: 100% 0% 100% 0% / 65% 100% 0% 35% ;
 }
 
 .bang.second {
-    top: 5px;
     left: 98px;
     border-radius: 100% 0% 69% 31% / 0% 100% 0% 100% ;
 }
 
 .bang.third {
-    top: 5px;
     right: 103px;
     border-radius: 100% 0% 66% 34% / 0% 100% 0% 100% ;
 }
 
 .bang.fourth {
-    top: 5px;
     right: 5px;
     border-radius: 61% 39% 65% 35% / 0% 100% 0% 100%;
 }
 
 .face {
     position: absolute;
-    top: 0;
     width: 400px;
     height: 310px;
     background-color: #F4DCC5;
@@ -147,135 +152,84 @@ body {
 .eye-left *, 
 .eye-right * {
     position: absolute;
-    
+}
+
+.eyeline {
+    top: 120px;
+    width: 110px;
+    height: 50px;
+    border-radius: 50%;
+    border: 10px solid black;
 }
 
 .eyeline.left {
-    top: 120px;
     left: 30px;
-    width: 110px;
-    height: 50px;
-    border-radius: 50%;
     transform: rotate(10deg);
-    border: 10px solid black;
 }
 
-.cover.one.left {
+.eyeline-cover {
+    height: 50px;
+    background-color: #F4DCC5;
+}
+
+.eyeline-cover.one {
     top: 130px;
-    left: 30px;
     width: 40px;
-    height: 50px;
-    background-color: #F4DCC5;
-    
 }
 
-.cover.two.left {
+.eyeline-cover.two {
     top: 150px;
-    left: 50px;
     width: 100px;
-    height: 50px;
-    background-color: #F4DCC5;
-   
+}
+
+.eyeline-cover.one.left {
+    left: 30px;
+}
+
+.eyeline-cover.two.left {
+    left: 50px;
+}
+
+.pupil {
+    top: 145px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: black;
+    border: 10px solid black;
 }
 
 .pupil.left {
-    top: 145px;
     left: 98px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: black;
-    border: 10px solid black;
 }
 
 .eyeline.right {
-    top: 120px;
     right: 30px;
-    width: 110px;
-    height: 50px;
-    border-radius: 50%;
     transform: rotate(-10deg);
-    border: 10px solid black;
 }
 
-.cover.one.right {
-    top: 130px;
+.eyeline-cover.one.right {
     right: 30px;
-    width: 40px;
-    height: 50px;
-    background-color: #F4DCC5;
-    
 }
 
-.cover.two.right {
-    top: 150px;
+.eyeline-cover.two.right {
     right: 50px;
-    width: 100px;
-    height: 50px;
-    background-color: #F4DCC5;
-   
 }
 
 .pupil.right {
-    top: 145px;
     right: 98px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: black;
-    border: 10px solid black;
 }
 
-/* .wink.top {
-    position: absolute;
-    top: 133px;
-    right: 72px;
-    width: 70px;
-    border: 5px solid black;
-    border-radius: 60% 60% 60% 60%;
-    transform: rotate(-30deg);
-} */
-
-/* .wink.middle {
-    position: absolute;
-    top: 150px;
-    right: 70px;
-    width: 60px;
-    border: 5px solid black;
-    border-radius: 60% 60% 60% 60%;
-} */
-
-/* .wink.bottom {
-    position: absolute;
-    top: 165px;
-    right: 72px;
-    width: 70px;
-    border: 5px solid black;
-    border-radius: 60% 60% 60% 60%;
-    transform: rotate(30deg);
-} */
-
-/* .bridge {
-    position: absolute;
-    top: 180px;
-    right: 180px;
-    width: 20px;
-    border: 4px solid black;
-    border-radius: 20% 10% 10% 10%;
-    transform: rotate(100deg);
-} */
-
-.cover.three {
+.nose-cover {
     position: absolute;
     top: 180px;
     left: 182px;
     width: 30px;
     height: 30px;
     background-color: #F4DCC5;
-    z-index: 1;
-    transform: rotate(100deg);
     border-radius: 10%;
-
+    z-index: 10;
+    transform: rotate(100deg);
 }
 
 .tip {
@@ -288,83 +242,73 @@ body {
     border-radius: 50%;
 }
 
-.cheek.left {
+.cheek {
     position: absolute;
     top: 200px;
-    left: 50px;
     width: 40px;
     height: 25px;
     border-radius: 50%;
     background-color: palevioletred;
+}
+
+.cheek.left {
+    left: 50px;
 }
 
 .cheek.right {
-    position: absolute;
-    top: 200px;
     right: 50px;
-    width: 40px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: palevioletred;
 }
-
-
 
 .mouth-up {
     position: absolute;
     top: 230px;
-    right: 125px;
+    right: 124px;
     width: 50px;
     height: 30px;
+    background-color: palevioletred;
     border: 7px solid black;
     border-radius: 84% 16% 29% 71% / 100% 27% 73% 0% ;
-    background-color: palevioletred;
 }
 
-.cover.four {
+.mouth-cover {
     position: absolute;
-    top: 196px;
+    top: 198px;
     left: 120px;
     width: 150px;
     height: 50px;
     background-color: #F4DCC5;
-    /* border: 3px solid black; */
-    z-index: -9;
+    z-index: -10;
 }
 
 .mouth-bottom {
     position: absolute;
     top: 230px;
-    right: 130px;
+    right: 125px;
     width: 120px;
     height: 30px;
     border: 7px solid black;
     border-radius: 50%;
-    z-index: -10;
+    z-index: -20;
+}
+
+.hair-down {
+    position: absolute;
+    top: 200px;
+    width: 120px;
+    height: 100px;
+    border-radius: 71% 29% 74% 26% / 100% 0% 100% 0%;
+    border: 7px solid black;
+    background-color: black;
+    z-index: -20;
 }
 
 .hair-down.left {
-    position: absolute;
-    top: 200px;
     left: -80px;
-    width: 120px;
-    height: 100px;
-    border-radius: 71% 29% 74% 26% / 100% 0% 100% 0% ;
-    border: 7px solid black;
-    background-color: black;
-    z-index: -20;
+    animation: 머리왼쪽 0.8s infinite alternate;
 }
 
 .hair-down.right {
-    position: absolute;
-    top: 200px;
     right: -80px;
-    width: 120px;
-    height: 100px;
-    border-radius: 71% 29% 74% 26% / 100% 0% 100% 0% ;
-    border: 7px solid black;
-    background-color: black;
-    z-index: -20;
-    transform: rotate(90deg);
+    animation: 머리오른쪽 0.8s infinite alternate;
 }
 
