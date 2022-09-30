@@ -1,4 +1,24 @@
 /* animation */
+@keyframes 스푼 {
+    from {
+        transform: rotate(5deg);
+    }
+
+    to {
+        transform: rotate(3deg) translateX(2px);
+    }
+}
+
+@keyframes 뱅 {
+    from {
+        transform: rotate(5deg);
+    }
+
+    to {
+        transform: rotate(3deg) translateX(10px);
+    }
+}
+
 @keyframes 머리왼쪽 {
     from {
         transform: rotate(20deg);
@@ -16,26 +36,6 @@
 
     to {
         transform: rotate(80deg) translateX(10px);
-    }
-}
-
-@keyframes 뱅 {
-    from {
-        transform: rotate(5deg);
-    }
-
-    to {
-        transform: rotate(3deg) translateX(10px);
-    }
-}
-
-@keyframes 스푼 {
-    from {
-        transform: rotate(5deg);
-    }
-
-    to {
-        transform: rotate(3deg) translateX(2px);
     }
 }
 
